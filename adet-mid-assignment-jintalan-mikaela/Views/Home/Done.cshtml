@@ -1,0 +1,25 @@
+﻿@model adet_mid_assignment_jintalan_mikaela.Models.Tasks
+@{
+    ViewData["Title"] = "Done";
+ }
+<br />
+<br />
+<br />
+<style>
+    body {
+        background-size: 100% 100%;
+        background-color: #fea8f3;
+    }
+</style>
+<h1 class="display-4">Task is Done</h1>
+<hr />
+<div class="text-left">
+    <h1> Task : @Model.TaskName </h1>
+    <h1> Date Created : @Model.DateCreated </h1>
+    <h1> Date Started : @Model.DateStarted </h1>
+    <h1> Date Finsihed : @Model.DateFinished </h1>
+    <h1> Total No. of Hours : @Model.TotalNoOfHours </h1>
+    <hr />
+    <p style="color:red;font-size:18px;">You may check on the link below for the full details. Thank you!</p>
+    <p><a asp-action="TaskList">https://localhost:44318/Home/TaskList</a></p>
+</div>

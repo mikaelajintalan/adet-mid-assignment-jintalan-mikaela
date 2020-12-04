@@ -1,0 +1,72 @@
+﻿@model IEnumerable<adet_mid_assignment_jintalan_mikaela.Models.Tasks>
+@{ 
+    ViewData["Title"] = "Task List"; 
+}
+<style>
+    body {
+        background-size: 100% 100%;
+        background-color: #fea8f3;
+    }
+
+    #tasks {
+        font-family: 'Century Gothic';
+        color: #000000;
+        width: 100%;
+    }
+
+        #tasks td, #tasks th {
+            padding: 8px;
+        }
+
+        #tasks tr:hover {
+            background-color: #FBAED2;
+        }
+
+        #tasks th {
+            padding-top: 12px;
+            color: #000000;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #FF00FF;
+            color: #000000;
+        }
+</style>
+<p><br /><br /><br /><br /></p>
+<div class="text-center">
+    <h1 class="display-4">Task List</h1>
+    <hr />
+    <table class="table table-bordered" id="tasks">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Date Created</th>
+                <th>Date Started</th>
+                <th>Date Finished</th>
+                <th>Total No. of Hours</th>
+                <th colspan="2"> </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @if (Model != null)
+            {
+                foreach (adet_mid_assignment_jintalan_mikaela.Models.Tasks m in Model)
+                {
+<tr>
+    <td> @m.TaskName</td>
+    <td> @m.DateCreated</td>
+    <td> @m.DateStarted</td>
+    <td> @m.DateFinished</td>
+    <td> @m.TotalNoOfHours</td>
+    <td><input type="submit" value="To Do" class="btn btn-primary" /> </td>
+    <td><input type="submit" value="Done" class="btn btn-primary" /></td>
+
+</tr>                }
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Create">Add new Task</a>
+</div>
